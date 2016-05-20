@@ -1,21 +1,21 @@
-package com.ers.console.webSocketConsole;
+package com.ers.console.webEngineWrapper;
 
 import org.rosuda.JRI.RMainLoopCallbacks;
 import org.rosuda.JRI.Rengine;
 
-import com.ers.console.RConsoleEventListener;
-import com.ers.console.webSocketConsole.msg.RChangeEnableResponse;
-import com.ers.console.webSocketConsole.msg.RConsoleResponse;
-import com.ers.console.webSocketConsole.msg.RConsoleResponseStatus;
-import com.ers.console.webSocketConsole.msg.RConsoleResponseType;
+import com.ers.console.REngineWrapperListener;
+import com.ers.console.webEngineWrapper.msg.RChangeEnableResponse;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponse;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseStatus;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseType;
 
-public class RConsoleWebSocketListener implements RMainLoopCallbacks,
-		RConsoleEventListener {
+public class REngineWebWrapperListener implements RMainLoopCallbacks,
+		REngineWrapperListener {
 
-	private RWebSocketConsole console;
+	private REngineWebWrapper console;
 
 	
-	public RConsoleWebSocketListener(RWebSocketConsole console) {
+	public REngineWebWrapperListener(REngineWebWrapper console) {
 		this.console = console;
 	}
 

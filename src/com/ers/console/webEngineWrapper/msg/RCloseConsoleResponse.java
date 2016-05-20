@@ -1,4 +1,4 @@
-package com.ers.console.webSocketConsole.msg;
+package com.ers.console.webEngineWrapper.msg;
 
 
 public class RCloseConsoleResponse extends RConsoleResponse{

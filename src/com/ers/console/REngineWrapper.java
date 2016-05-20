@@ -3,7 +3,7 @@ package com.ers.console;
 
 import org.rosuda.JRI.Rengine;
 
-import com.ers.console.webSocketConsole.msg.RConsoleResponseStatus;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseStatus;
 import com.ers.errors.CanNotLoadRException;
 import com.ers.utils.Constants;
 
@@ -13,7 +13,7 @@ import com.ers.utils.Constants;
  * @author Salim
  *
  */
-public abstract class RConsole  implements Constants {
+public abstract class REngineWrapper  implements Constants {
 
 	public abstract void init() throws CanNotLoadRException;
 

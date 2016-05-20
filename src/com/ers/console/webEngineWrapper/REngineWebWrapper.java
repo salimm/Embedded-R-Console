@@ -1,15 +1,15 @@
-package com.ers.console.webSocketConsole;
+package com.ers.console.webEngineWrapper;
 
 import org.rosuda.JRI.RMainLoopCallbacks;
 import org.rosuda.JRI.Rengine;
 
-import com.ers.console.RConsole;
-import com.ers.console.RConsoleEventListener;
-import com.ers.console.webSocketConsole.msg.RCloseConsoleResponse;
-import com.ers.console.webSocketConsole.msg.RConsoleCommand;
-import com.ers.console.webSocketConsole.msg.RConsoleResponse;
-import com.ers.console.webSocketConsole.msg.RConsoleResponseStatus;
-import com.ers.console.webSocketConsole.msg.RConsoleResponseType;
+import com.ers.console.REngineWrapper;
+import com.ers.console.REngineWrapperListener;
+import com.ers.console.webEngineWrapper.msg.RCloseConsoleResponse;
+import com.ers.console.webEngineWrapper.msg.RConsoleCommand;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponse;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseStatus;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseType;
 import com.ers.errors.CanNotLoadRException;
 
 /**
@@ -18,7 +18,7 @@ import com.ers.errors.CanNotLoadRException;
  * @author Salim
  *
  */
-public class RWebSocketConsole extends RConsole {
+public class REngineWebWrapper extends REngineWrapper {
 
 	/**
 	 * holds instance of R Engine from JRI
@@ -28,7 +28,7 @@ public class RWebSocketConsole extends RConsole {
 	/**
 	 * holds instance of R Console Event Listener
 	 */
-	private RConsoleEventListener eventListener;
+	private REngineWrapperListener eventListener;
 
 	/**
 	 * holds the instance of CollbackHandler for R engine
@@ -38,10 +38,10 @@ public class RWebSocketConsole extends RConsole {
 	/**
 	 * holds pointer to socket being used by console for communication
 	 */
-	private RConsoleWebSocketContainer socket;
+	private REngineWebWrapperSocketContainer socket;
 
-	public RWebSocketConsole() {
-		RConsoleWebSocketListener listner = new RConsoleWebSocketListener(this);
+	public REngineWebWrapper() {
+		REngineWebWrapperListener listner = new REngineWebWrapperListener(this);
 		this.setEventListener(listner);
 		this.setrCollbackHandler(listner);	
 	}
@@ -90,11 +90,11 @@ public class RWebSocketConsole extends RConsole {
 		this.eventListener.handleEnableEvent(enable);
 	}
 
-	public RConsoleEventListener getEventListener() {
+	public REngineWrapperListener getEventListener() {
 		return eventListener;
 	}
 
-	public void setEventListener(RConsoleEventListener eventListener) {
+	public void setEventListener(REngineWrapperListener eventListener) {
 		this.eventListener = eventListener;
 	}
 
@@ -111,15 +111,15 @@ public class RWebSocketConsole extends RConsole {
 			getSocket().sendResponse(response);
 	}
 
-	public RConsoleWebSocketContainer getSocket() {
+	public REngineWebWrapperSocketContainer getSocket() {
 		return socket;
 	}
 
-	public void setSocket(RConsoleWebSocketContainer socket) {
+	public void setSocket(REngineWebWrapperSocketContainer socket) {
 		this.socket = socket;
 	}
 
-	public void configureSocket(RConsoleWebSocketContainer socket) {
+	public void configureSocket(REngineWebWrapperSocketContainer socket) {
 		this.socket = socket;
 
 	}

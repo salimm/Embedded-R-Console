@@ -1,22 +1,22 @@
-package com.ers.console.webSocketConsole.jetty;
+package com.ers.console.webEngineWrapper.jetty;
 
 
 import java.io.IOException;
 
 import org.eclipse.jetty.websocket.api.WebSocketAdapter;
 
-import com.ers.console.webSocketConsole.RConsoleWebSocketContainer;
-import com.ers.console.webSocketConsole.RWebSocketConsole;
-import com.ers.console.webSocketConsole.msg.RConsoleCommand;
-import com.ers.console.webSocketConsole.msg.RConsoleResponse;
+import com.ers.console.webEngineWrapper.REngineWebWrapper;
+import com.ers.console.webEngineWrapper.REngineWebWrapperSocketContainer;
+import com.ers.console.webEngineWrapper.msg.RConsoleCommand;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class RConsoleWebSocket extends WebSocketAdapter implements
-		RConsoleWebSocketContainer {
+public class REngineWebSocket extends WebSocketAdapter implements
+		REngineWebWrapperSocketContainer {
 
-	RWebSocketConsole console;
+	REngineWebWrapper console;
 
-	public RConsoleWebSocket(RWebSocketConsole console) {
+	public REngineWebSocket(REngineWebWrapper console) {
 		this.console = console;
 		console.configureSocket(this);
 	}

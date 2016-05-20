@@ -3,9 +3,9 @@ package examples;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 
-import com.ers.console.RConsole;
-import com.ers.console.RConsoleEventListener;
-import com.ers.console.java.RSimpleConsole;
+import com.ers.console.REngineWrapper;
+import com.ers.console.REngineWrapperListener;
+import com.ers.console.java.RCLIWrapper;
 import com.ers.errors.CanNotLoadRException;
 import com.java.swing.components.JConsole;
 
@@ -21,7 +21,7 @@ public class SwingExample {
 		frame.setVisible(true);
 
 		// configure R console
-		RSimpleConsole console = new RSimpleConsole(jc.createInputStream(),
+		RCLIWrapper console = new RCLIWrapper(jc.createInputStream(),
 				jc.createOutputStream(), new RSwingConsoleEventListener(jc,frame));
 		console.init();
 		console.run();
@@ -31,7 +31,7 @@ public class SwingExample {
 
 }
 
-class RSwingConsoleEventListener implements RConsoleEventListener{
+class RSwingConsoleEventListener implements REngineWrapperListener{
 	private JConsole console;
 	private JFrame frame;
 

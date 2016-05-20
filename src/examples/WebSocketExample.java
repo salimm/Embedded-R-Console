@@ -22,8 +22,8 @@ import org.eclipse.jetty.server.handler.ContextHandlerCollection;
 import org.eclipse.jetty.server.handler.DefaultHandler;
 import org.eclipse.jetty.server.handler.HandlerCollection;
 
-import com.ers.console.webSocketConsole.RWebSocketConsole;
-import com.ers.console.webSocketConsole.jetty.RConsoleWebSocketHandler;
+import com.ers.console.webEngineWrapper.REngineWebWrapper;
+import com.ers.console.webEngineWrapper.jetty.REngineWebSocketHandler;
 
 /**
  * 
@@ -51,9 +51,9 @@ public class WebSocketExample {
 		assets.setHandler(new AssetsHandler());
 		handlers.addHandler(assets);
 		
-		RWebSocketConsole console = new RWebSocketConsole();
+		REngineWebWrapper console = new REngineWebWrapper();
 		console.init();
-		RConsoleWebSocketHandler webSocketHandler = new RConsoleWebSocketHandler(
+		REngineWebSocketHandler webSocketHandler = new REngineWebSocketHandler(
 				console);
 		webSocketHandler.setHandler(new DefaultHandler());
 		ContextHandler consoleHandler = new ContextHandler();

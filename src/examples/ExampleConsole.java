@@ -1,20 +1,20 @@
 package examples;
 
-import com.ers.console.RConsoleEventListener;
-import com.ers.console.java.RSimpleConsole;
+import com.ers.console.REngineWrapperListener;
+import com.ers.console.java.RCLIWrapper;
 import com.ers.errors.CanNotLoadRException;
 
 public class ExampleConsole {
 
 	public static void main(String[] args) throws CanNotLoadRException {
-		RSimpleConsole console = new RSimpleConsole(System.in, System.out,
+		RCLIWrapper console = new RCLIWrapper(System.in, System.out,
 				new RExampleEventListener());
 		console.init();
 		console.run();
 	}
 }
 
-class RExampleEventListener implements RConsoleEventListener {
+class RExampleEventListener implements REngineWrapperListener {
 
 	@Override
 	public void handleEnableEvent(boolean enable) {

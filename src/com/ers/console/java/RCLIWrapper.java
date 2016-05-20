@@ -9,21 +9,21 @@ import org.rosuda.JRI.RMainLoopCallbacks;
 import org.rosuda.JRI.Rengine;
 
 import com.ers.CommandType;
-import com.ers.console.RConsole;
-import com.ers.console.RConsoleEventListener;
-import com.ers.console.webSocketConsole.msg.RConsoleResponseStatus;
+import com.ers.console.REngineWrapper;
+import com.ers.console.REngineWrapperListener;
+import com.ers.console.webEngineWrapper.msg.RConsoleResponseStatus;
 import com.ers.errors.CanNotLoadRException;
 
-public class RSimpleConsole extends RConsole implements RMainLoopCallbacks {
+public class RCLIWrapper extends REngineWrapper implements RMainLoopCallbacks {
 
 	private InputStream inStream;
 	private Rengine rEngine;
 	private Scanner scanner;
 	private OutputStream outStream;
-	private RConsoleEventListener eventListener;
+	private REngineWrapperListener eventListener;
 
-	public RSimpleConsole(InputStream inStream, OutputStream outStream,
-			RConsoleEventListener eventListener) {
+	public RCLIWrapper(InputStream inStream, OutputStream outStream,
+			REngineWrapperListener eventListener) {
 		this.outStream = outStream;
 		this.eventListener = eventListener;
 		this.setInStream(inStream);

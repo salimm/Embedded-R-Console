@@ -1,6 +1,6 @@
 package com.ers.console;
 
-public interface RConsoleEventListener {
+public interface REngineWrapperListener {
 	
 	/**
 	 * is called when the RConsole wants to disable/enable interface of any kind
