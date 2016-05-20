@@ -10,17 +10,19 @@
 	<classpathentry kind="lib" path="libs/websocket/websocket-common-9.3.8.v20160314.jar"/>
 	<classpathentry kind="lib" path="libs/websocket/websocket-server-9.3.8.v20160314.jar"/>
 	<classpathentry kind="lib" path="libs/websocket/websocket-servlet-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/jetty-continuation-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/jetty-http-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/jetty-io-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/jetty-server-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/jetty-util-9.3.8.v20160314.jar"/>
-	<classpathentry kind="lib" path="libs/servlet-api-3.1.jar"/>
 	<classpathentry kind="lib" path="libs/JRI.jar"/>
 	<classpathentry kind="lib" path="libs/JRIEngine.jar"/>
 	<classpathentry kind="lib" path="libs/REngine.jar"/>
-	<classpathentry kind="lib" path="libs/jackson-databind-2.7.4.jar"/>
-	<classpathentry kind="lib" path="libs/jackson-core-2.7.4.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-continuation-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-http-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-io-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-server-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-servlet-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/jetty-util-9.3.8.v20160314.jar"/>
+	<classpathentry kind="lib" path="libs/jetty/servlet-api-3.1.jar"/>
+	<classpathentry kind="lib" path="libs/jackson/jackson-annotations-2.7.4.jar"/>
+	<classpathentry kind="lib" path="libs/jackson/jackson-core-2.7.4.jar"/>
+	<classpathentry kind="lib" path="libs/jackson/jackson-databind-2.7.4.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/JConsole"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

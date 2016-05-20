@@ -62,8 +62,8 @@ public class RWebSocketConsole extends RConsole {
 	@Override
 	public void closeConsole() {
 		rEngine.end();
-		socket.sendResponse(new RCloseConsoleResponse());
-		socket.close();
+		getSocket().sendResponse(new RCloseConsoleResponse());
+		getSocket().close();
 	}
 
 	@Override
@@ -107,6 +107,20 @@ public class RWebSocketConsole extends RConsole {
 	}
 
 	public void sendResponse(RConsoleResponse response) {
-		socket.sendResponse(response);
+		if (getSocket() != null)
+			getSocket().sendResponse(response);
+	}
+
+	public RConsoleWebSocketContainer getSocket() {
+		return socket;
+	}
+
+	public void setSocket(RConsoleWebSocketContainer socket) {
+		this.socket = socket;
+	}
+
+	public void configureSocket(RConsoleWebSocketContainer socket) {
+		this.socket = socket;
+
 	}
 }

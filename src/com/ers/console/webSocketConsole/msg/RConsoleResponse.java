@@ -9,7 +9,7 @@ public class RConsoleResponse {
 
 	public RConsoleResponse(String text, RConsoleResponseType type,
 			RConsoleResponseStatus status) {
-		this.setText(text);
+		this.setText(text.replaceAll("\n", "\\\\n").replaceAll("\r", "\\\\r").replaceAll("\t", "\\\\t"));
 		this.setType(type);
 		this.setStatus(status);
 
@@ -20,7 +20,7 @@ public class RConsoleResponse {
 	}
 
 	public void setText(String text) {
-		this.text = text;
+		this.text = text.replaceAll("\n", "\\\\n").replaceAll("\r", "\\\\r").replaceAll("\t", "\\\\t");
 	}
 
 	public RConsoleResponseType getType() {

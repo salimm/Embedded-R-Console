@@ -10,6 +10,12 @@ public class RConsoleCommand {
 	
 	private String command;
 
+	/**
+	 * dummy for json to Java object
+	 */
+	public RConsoleCommand() {
+	}
+	
 	public RConsoleCommand(String cmd) {
 		this.setCommand(cmd);
 	}
