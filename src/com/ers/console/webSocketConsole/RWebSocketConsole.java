@@ -43,7 +43,7 @@ public class RWebSocketConsole extends RConsole {
 	public RWebSocketConsole() {
 		RConsoleWebSocketListener listner = new RConsoleWebSocketListener(this);
 		this.setEventListener(listner);
-		this.setrCollbackHandler(listner);
+		this.setrCollbackHandler(listner);	
 	}
 
 	public void eval(RConsoleCommand cmd) {
